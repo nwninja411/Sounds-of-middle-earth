@@ -1,0 +1,90 @@
+<!--Define the doctype-->
+<!DOCTYPE html>
+<!--Add in you tags; Html, head, body, etc.-->
+<html>
+    <head>
+        <!--Here I am making it so the webpage displays correctly on any size screen-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Name the webpage tabe-->
+        <title>Sounds of Middle Earth</title>
+        <!--Here I am going to style my webpage-->
+        <style>
+            body{
+                display: flex;
+                /*By defining the flex direction as a column I am making it so items are aranged vertical rather than horizontal*/
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                background: url('Shire_background.jpg');
+                /*Background size allows you to make sure the image is the right size. In my case I wanted it to cover the whole background.*/
+                background-size: cover;
+                font-family: 'RingBearer' , serif;
+                color: rgb(164,122,84);
+            }
+            /*I am making sure the vertcally stacked items have some space inbetween them*/
+            h1 {
+                margin-bottom: 20px;
+                text-align: center;
+                border: 2px solid rgba(94, 114, 29, 0.562);
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 100px;
+                padding: 5px;
+            }
+            /*Here I will add some flare to the title when you hover over it.*/
+            h1:hover{
+                transform: scale(1.05);
+                box-shadow: rgba(164, 122, 84, 0.5);
+                transition: transform 0.5s ease,box-shadow 0.5s ease;
+                text-shadow: 2px 2px 5px rgba(145, 124, 98, 0.8);
+                transition: text-shadow 0.5s ease;
+                
+            }
+            audio {
+                margin-bottom: 10px;
+                width: 300px;
+            }
+            .player-container{
+                border: 4px solid rgba(94, 114, 29, 0.562);
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 10px;
+                padding: 17px;
+            }
+            /*Here I am adding a little pop to the audio boxes when you hover your mouse over them*/
+            audio:hover{
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                /*Adding a transition makes it so the audio box gradually grows to its new scale rather than teleporting to it*/
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        @font-face {
+        /*Here I am naming my font so that I can refernce it*/
+        font-family: 'RingBearer';
+        /*Here I am linking my font file so that when I refernce it it knows what the font looks like*/
+        src: url('RingbearerMedium-51mgZ.ttf') format('truetype');
+        /*these tags let the code know that the style and weight should be normal rather than bold or italic*/
+        font-weight: normal; 
+        font-style: normal; 
+        }
+        </style>
+    </head>
+    <body>
+        <div class="player-container">
+        <!--Add a title that appears on your actual webpage-->
+        <h1>Melodies of the Shire</h1>
+        <!--Now we will add in the audio so that the user can choose to play a sound-->
+        <audio controls preload="auto">
+            <!--This is the source of the auido-->
+            <source src="Whispers of the Shire ext v1.2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <!--I'm adding another sound-->
+        <audio controls preload="auto">
+            <source src="Whispers of the Shire ext v1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        </div>
+    </body>
+    
+</html>
